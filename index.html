@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--  Taking a cue from @laurenancona, force https -->
+    <script type="text/javascript">
+        var host = "eaglessuperbowlparade.com";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eagles Super Bowl LII Victory Parade Map">
+    <title>Eagles Super Bowl LII Victory Parade Map</title>
+    <link rel="shortcut icon" href="images/football.png">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Mapbox GL JS -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Turf.js -->
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+
+    <!-- Font Awesome icon library -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+    <div class="grid">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <a href="#" id="desktop-info" class="btn btn-light-green">More Info</a>
+            </div>
+        </div>
+        <!-- Header -->
+        <!-- Title -->
+        <div class="title">
+            <h1><i class="fas fa-football-ball"></i> Eagles Victory Parade Map</h1>
+        </div>
+        <!-- Title -->
+        <!-- Sidebar -->
+        <sidebar>
+            <div>
+                <a href="#" id="find-me" class="btn btn-light-green">Find Me</a>
+            </div>
+            <div class="block">
+                <p>Click the button to find the nearest bar or restaurant!</p>
+            </div>
+            <!-- if more layers are added, uncomment the nav line to create layer toggle buttons -->
+            <!-- <nav id="layers"></nav> -->
+            <div class="block">
+                <h4>Parade Details</h4>
+                    <p>Date: Thursday, February 8, 2018</br>
+                    Start Time: 11 AM</br>
+                    Route:
+                    <ul>
+                        <li>Start at Broad and Pattison</li>
+                        <li>North on Broad Street to S. Penn Square</li>
+                        <li>West on S. Penn Square to 15th Street</li>
+                        <li>North on 15th Street to JFK Blvd.</li>
+                        <li>West on JFK Blvd. to 16th Street</li>
+                        <li>North on 16th Street to the Benjamin Franklin Parkway</li>
+                        <li>West on the Benjamin Franklin Parkway to Eakins Oval</li>
+                        <li>End at Philadelphia Museum of Art</li>
+                    </ul>
+                </p>
+            </div>
+        </sidebar>
+        <!-- Sidebar -->
+        <!-- Map -->
+        <maparea id="map"></maparea>
+        <!-- Map -->
+        <!-- Footer -->
+        <div class="footer">
+            <div>
+                <a href="#" id="find-me" class="btn btn-light-green">Find Me</a>
+            </div>
+            <div>
+                <a href="#" id="mobile-info" class="btn btn-green">More Info</a>
+            </div>
+        </div>
+        <!-- Footer -->
+    </div>
+    <!-- Modal -->
+    <div id="about-modal" class="modal">
+    <!-- Modal Content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                <h3>Super Bowl LII Champions!</h3>
+            </div>
+            <div class="modal-body">
+                <h4>Record-setting game</h4>
+                <p>The <a href="http://www.philadelphiaeagles.com/">Philadelphia Eagles</a> won the 2018 Lombardi Trophy for the first time in franchise history, beating the New England Patriots with a score of 41-33 on Sunday, February 4, 2018.</p>
+                <p>Now it's time to celebrate!</p>
+                <p>Use this map to find a bar or restaurant nearest to your current location. Click the "Find Me" button to get started!</p>
+                <p>Want to keep reliving those magical moments from Sunday? Check out this <a href="https://www.youtube.com/watch?v=qW1xbhW2PEE" target='_blank'>video of game highlights</a>!</p>
+                <h4>Sources</h4>
+                <p>This tool was built by:<br>
+                    <a href="https://www.twitter.com/danjford/" target='_blank'>Dan Ford</a>
+                </p>
+                <p>The map was styled with <a href="https://www.mapbox.com/" target='_blank'>Mapbox</a> services and built using <a href="https://www.mapbox.com/mapbox-gl-js/api/" target='_blank'>Mapbox GL JS</a> and <a href="http://turfjs.org/" target='_blank'>Turf</a>.</p>
+                <p>The parade route was digitized in Mapbox Studio. Bar and restaurant information was downloaded from <a href="https://www.openstreetmap.org/" target='_blank'>OpenStreetMap</a> using <a href="https://overpass-turbo.eu/" target='_blank'>Overpass Turbo</a>. Parade details collected from <a href="http://6abc.com/sports/full-details-for-eagles-super-bowl-parade-and-ceremony/3036697/" target='_blank'>6abc</a>.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuamZvcmQiLCJhIjoiY2pkYW5nMmlkM3V4ajJxbnc5a3Bna3FvciJ9.eWvqcTNrJtMx0YCI1dwPqA';
+const MAP = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/danjford/cjdanyxn35c9j2spkshl6ww1z',
+  minZoom: 11,
+  zoom: 12,
+  center: [-75.165367, 39.937921],
+  bearing: 8.80,
+  hash: true,
+});
+
+const DATA_SOURCES = {
+  paradeRoute: 'mapbox://danjford.cjdam66c24ry52xnxbm8gixuv-8lrj4',
+  paradeStart: 'mapbox://danjford.cjdaoair75amq33s60hdhrgft-7jrln',
+  paradeEnd: 'mapbox://danjford.cjdb0bzg22m2d2qr2hwdxtxhp-37jcx',
+  phillyBarsRest: 'mapbox://danjford.cjdax71e63nqk2qrzm63oeall-4ulwn',
+};
+
+const POPUP = new mapboxgl.Popup ({
+    closeButton: true,
+    closeOnClick: false
+});
+
+MAP.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+}));
+
+MAP.addControl(new mapboxgl.NavigationControl());
+
+MAP.on('load', function () {
+
+    MAP.addSource('parade-route', {
+        type: 'vector',
+        url: DATA_SOURCES.paradeRoute
+    });
+    MAP.addLayer({
+        "id": "parade-route",
+        "source": "parade-route",
+        "source-layer": "parade-route",
+        "type": "line",
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-color": "#00353b",
+            "line-opacity": 0.9,
+            "line-width": 5
+        }
+    });
+
+    MAP.addSource('parade-start', {
+        type: 'vector',
+        url: DATA_SOURCES.paradeStart
+    });
+    MAP.addLayer({
+        "id": "parade-start",
+        "source": "parade-start",
+        "source-layer": "parade-start",
+        "type": "circle",
+        "layout": {
+            "visibility": "visible"
+        },
+        'paint': {
+            'circle-radius': {
+                'base': 1.75,
+                'stops': [[12, 8], [22, 180]]
+            },
+            'circle-color': '#2ecc71'
+        }
+    });
+
+    MAP.addSource('parade-end', {
+        type: 'vector',
+        url: DATA_SOURCES.paradeEnd
+    });
+    MAP.addLayer({
+        "id": "parade-end",
+        "source": "parade-end",
+        "source-layer": "parade-end",
+        "type": "circle",
+        "layout": {
+            "visibility": "visible"
+        },
+        'paint': {
+            'circle-radius': {
+                'base': 1.75,
+                'stops': [[12, 8], [22, 180]]
+            },
+            'circle-color': '#a20000'
+        },
+    });
+
+    MAP.addSource('philly-bars-rest', {
+        type: 'vector',
+        url: DATA_SOURCES.phillyBarsRest
+    });
+    MAP.addLayer({
+        "id": "philly-bars-rest",
+        "source": "philly-bars-rest",
+        "source-layer": "philly-bars-rest",
+        "type": "circle",
+        "layout": {
+            "visibility": "visible"
+        },
+        'paint': {
+            // make circles larger as the user zooms from z12 to z22
+            'circle-radius': {
+                'base': 1.75,
+                'stops': [[12, 5], [22, 60]]
+            },
+            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
+            'circle-color': [
+                'match',
+                ['get', 'amenity'],
+                'restaurant', '#0091a1',
+                'bar', '#f4b400',
+                /* other */ '#ccc'
+            ]
+        }
+    });
+
+    MAP.addSource('nearest-bar', {
+        type: 'geojson',
+        data: {
+            type: 'FeatureCollection',
+            features: [
+            ]
+        }
+    });
+
+    // enable POPUP
+    MAP.on('click', function(e) {
+      POPUP.remove();
+        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest'] });
+        if (!features.length) {
+          return;
+        }
+        let feature = features[0];
+        let amenityType = feature.properties.amenity;
+        let amenityName = feature.properties.name;
+
+        POPUP.setLngLat(e.lngLat);
+        POPUP.setHTML('<div id=\'popup\' class=\'popup\' style=\'z-index: 10;\'><strong>' + "Type: " + '</strong>' + amenityType + '</br><strong>' + "Name: " + '</strong>' + amenityName + '</div>');
+        POPUP.addTo(MAP);
+    });
+
+    MAP.on('mousemove', function(e) {
+        var features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest'] });
+        MAP.getCanvas().style.cursor = features.length ? 'pointer' : '';
+    });
+
+    // uncomment this section if toggle layer function needed
+
+    // toggle layers
+    // let toggleLayerIds = [ 'philly-bars-rest' ];
+    //
+    // for (var i = 0; i < toggleLayerIds.length; i++) {
+    //     let id = toggleLayerIds[i];
+    //
+    //     let link = document.createElement('a');
+    //     link.href = '#';
+    //     link.className = 'active';
+    //     link.textContent = id;
+    //
+    //     link.onclick = function (e) {
+    //         var clickedLayer = this.textContent;
+    //         e.preventDefault();
+    //         e.stopPropagation();
+    //
+    //         let visibility = MAP.getLayoutProperty(clickedLayer, 'visibility');
+    //
+    //         if (visibility === 'visible') {
+    //             MAP.setLayoutProperty(clickedLayer, 'visibility', 'none');
+    //             this.className = '';
+    //         } else {
+    //             this.className = 'active';
+    //             MAP.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+    //         }
+    //     };
+    //
+    //     let layers = document.getElementById('layers');
+    //     layers.appendChild(link);
+    // }
+
+});
+
+</script>
+<script src="js/desktop-info-popup.js"></script>
+<script src="js/mobile-info-popup.js"></script>
+</body>
+</html>
