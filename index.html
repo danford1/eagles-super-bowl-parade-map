@@ -420,11 +420,11 @@ MAP.on('load', function () {
           return;
         }
         let feature = features[0];
-        let amenityType = feature.properties.amenity;
-        let amenityName = feature.properties.name;
+        let amenityName = feature.properties.Name;
+        let amenityDescr = feature.properties.descriptio;
 
         POPUP.setLngLat(e.lngLat);
-        POPUP.setHTML('<div id=\'popup\' class=\'popup\' style=\'z-index: 10;\'><strong>' + "Type: " + '</strong>' + amenityType + '</br><strong>' + "Name: " + '</strong>' + amenityName + '</div>');
+        POPUP.setHTML('<div id=\'popup\' class=\'popup\' style=\'z-index: 10;\'><strong>' + "Name: " + '</strong>' + amenityName + '</br>' + amenityDescr + '</div>');
         POPUP.addTo(MAP);
     });
 
