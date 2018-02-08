@@ -66,6 +66,7 @@ h4 {
 }
 
 p {
+    margin: 0;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 150%;
@@ -73,6 +74,7 @@ p {
 }
 
 ul {
+    margin: 0;
     padding-left: 20px;
     font-size: 0.9rem;
     font-weight: 400;
@@ -209,7 +211,7 @@ maparea {
         flex-direction: column;
         background-color: #e3eaea;
         color: #444;
-        padding: 50px 20px 20px 20px;
+        padding: 10px 5px 0px 5px;
         text-align: left;
         align-items: center;
         align-content: left;
@@ -273,6 +275,45 @@ sidebar > .block {
     background-color: #18a1b0;
     color: #fff;
     text-decoration: none;
+}
+
+.btn-toggle {
+    background: #fff;
+    top: 10px;
+    right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.4);
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-toggle a {
+    font-size: 0.9rem;
+    color: #004c54;
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.btn-toggle a:last-child {
+    border: none;
+}
+
+.btn-toggle a:hover {
+    background-color: #f8f8f8;
+    color: #404040;
+}
+
+.btn-toggle a.active {
+    background-color: #004c54;
+    color: #ffffff;
+}
+
+.btn-toggle a.active:hover {
+    background: #0091a1;
 }
 
 /*Buttons*/

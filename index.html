@@ -59,18 +59,21 @@
         <!-- Sidebar -->
         <sidebar>
             <div>
-                <a href="#" id="find-me" class="btn btn-light-green">Find Me</a>
+                <h4><center>Click the button to find the nearest bar or restaurant!<center></h4>
+            </div>
+            <div>
+                <a href="#" id="find-me" class="btn btn-light-green">Get Closest Beer!</a>
             </div>
             <div class="block">
-                <p>Click the button to find the nearest bar or restaurant!</p>
+                <h4><center>Toggle Layers</center></h4>
+                <nav id="layers" class="btn-toggle"></nav>
             </div>
-            <!-- if more layers are added, uncomment the nav line to create layer toggle buttons -->
-            <nav id="layers"></nav>
             <div class="block">
                 <h4>Parade Details</h4>
-                    <p>Date: Thursday, February 8, 2018</br>
-                    Start Time: 11 AM</br>
-                    Route:
+                <p>
+                    <strong>Date:</strong> Thursday, February 8, 2018</br>
+                    <strong>Start Time:</strong> 11 AM</br>
+                    <strong>Route:</strong>
                     <ul>
                         <li>Start at Broad and Pattison</li>
                         <li>North on Broad Street to S. Penn Square</li>
@@ -119,7 +122,9 @@
                 <p>Want to keep reliving those magical moments from Sunday? Check out this <a href="https://www.youtube.com/watch?v=qW1xbhW2PEE" target='_blank'>video of game highlights</a>!</p>
                 <h4>Sources</h4>
                 <p>This tool was built by:<br>
-                    <a href="https://www.twitter.com/danjford/" target='_blank'>Dan Ford</a>
+                    <a href="https://www.twitter.com/danjford/" target='_blank'>Dan Ford</a></br>
+                    <a href="https://twitter.com/k_llyi" target='_blank'>Kelly Innes</a></br>
+                    <a href="https://twitter.com/CRVanPollard" target='_blank'>Chris Pollard</a>
                 </p>
                 <p>The map was styled with <a href="https://www.mapbox.com/" target='_blank'>Mapbox</a> services and built using <a href="https://www.mapbox.com/mapbox-gl-js/api/" target='_blank'>Mapbox GL JS</a> and <a href="http://turfjs.org/" target='_blank'>Turf</a>.</p>
                 <p>The parade route was digitized in Mapbox Studio. Bar and restaurant information was downloaded from <a href="https://www.openstreetmap.org/" target='_blank'>OpenStreetMap</a> using <a href="https://overpass-turbo.eu/" target='_blank'>Overpass Turbo</a>. Parade details collected from <a href="http://6abc.com/sports/full-details-for-eagles-super-bowl-parade-and-ceremony/3036697/" target='_blank'>6abc</a>.</p>
@@ -152,8 +157,8 @@ const DATA_SOURCES = {
 
 const POPUP = new mapboxgl.Popup ({
     closeButton: true,
-    closeOnClick: false
- });
+    closeOnClick: true
+});
 
 let eateryButtonActive = false;
 
@@ -219,7 +224,7 @@ MAP.on('load', function () {
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "#00353b",
+            "line-color": "#0091a1",
             "line-opacity": 0.9,
             "line-width": 7
         }
@@ -242,7 +247,7 @@ MAP.on('load', function () {
                 'base': 1.75,
                 'stops': [[12, 8], [22, 180]]
             },
-            'circle-color': '#2ecc71'
+            'circle-color': '#00aaea'
         }
     });
 
@@ -263,7 +268,7 @@ MAP.on('load', function () {
                 'base': 1.75,
                 'stops': [[12, 8], [22, 180]]
             },
-            'circle-color': '#a20000'
+            'circle-color': '#00aaea'
         },
     });
 
@@ -280,7 +285,7 @@ MAP.on('load', function () {
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "#00aaea",
+            "line-color": "#444",
             "line-opacity": 0.9,
             "line-width": 3
         }
@@ -303,8 +308,14 @@ MAP.on('load', function () {
                 'base': 1.75,
                 'stops': [[12, 5], [22, 60]]
             },
-            'circle-color': '#000'
-        }
+            'circle-color': {
+              property: 'ESCORE',
+              stops: [
+              [1, '#df325a'],
+              [2, '#32df8f']
+              ]
+             }
+           }
     });
 
     MAP.addSource('philly-bars-rest', {
@@ -346,7 +357,7 @@ MAP.on('load', function () {
     // enable POPUP
     MAP.on('click', function(e) {
       POPUP.remove();
-        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest', 'philly-transit-lines', 'philly-transit-stations'] });
+        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest'] });
         if (!features.length) {
           return;
         }
@@ -360,25 +371,50 @@ MAP.on('load', function () {
     });
 
     MAP.on('mousemove', function(e) {
-        var features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest', 'philly-transit-lines', 'philly-transit-stations'] });
+        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest']});
         MAP.getCanvas().style.cursor = features.length ? 'pointer' : '';
     });
 
-    // uncomment this section if toggle layer function needed
+    // enable POPUP
+    MAP.on('click', function(e) {
+      POPUP.remove();
+        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-transit-stations'] });
+        if (!features.length) {
+          return;
+        }
+        let feature = features[0];
+        let lineTitle = feature.properties.LINE;
+        let paradeStatus = feature.properties.EAGLES;
+        let stationName = feature.properties.STATION;
+
+        POPUP.setLngLat(e.lngLat);
+        POPUP.setHTML('<div id=\'popup\' class=\'popup\' style=\'z-index: 10;\'><strong>' + "Line: " + '</strong>' + lineTitle + '</br><strong>' + "Station: " + '</strong>' + stationName + '</br><strong>' + "Open: " + '</strong>' + paradeStatus + '</div>');
+        POPUP.addTo(MAP);
+    });
+
+    MAP.on('mousemove', function(e) {
+        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-transit-stations'] });
+        MAP.getCanvas().style.cursor = features.length ? 'pointer' : '';
+    });
 
     // toggle layers
-    let toggleLayerIds = [ 'philly-bars-rest', 'philly-transit-lines', 'philly-transit-stations' ];
+    let toggleLayerIds = [ 'philly-transit-lines', 'philly-transit-stations' ];
 
     for (var i = 0; i < toggleLayerIds.length; i++) {
+
+        let layerNames =  [ 'Transit Lines', 'Transit Stations' ];
+
+        let names = layerNames[i];
+
         let id = toggleLayerIds[i];
 
         let link = document.createElement('a');
         link.href = '#';
         link.className = 'active';
-        link.textContent = id;
+        link.textContent = names;
 
         link.onclick = function (e) {
-            var clickedLayer = this.textContent;
+            let clickedLayer = id;
             e.preventDefault();
             e.stopPropagation();
 
