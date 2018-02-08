@@ -52,7 +52,7 @@
                 <p>Click the button to find the nearest bar or restaurant!</p>
             </div>
             <!-- if more layers are added, uncomment the nav line to create layer toggle buttons -->
-            <!-- <nav id="layers"></nav> -->
+            <nav id="layers"></nav>
             <div class="block">
                 <h4>Parade Details</h4>
                     <p>Date: Thursday, February 8, 2018</br>
@@ -117,7 +117,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuamZvcmQiLCJhIjoiY2pkYW5nMmlkM3V4ajJxbnc5a
 const MAP = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/danjford/cjdanyxn35c9j2spkshl6ww1z',
-  minZoom: 11,
   minZoom: 9,
   zoom: 12,
   center: [-75.165367, 39.937921],
@@ -130,6 +129,8 @@ const DATA_SOURCES = {
   paradeStart: 'mapbox://danjford.cjdaoair75amq33s60hdhrgft-7jrln',
   paradeEnd: 'mapbox://danjford.cjdb0bzg22m2d2qr2hwdxtxhp-37jcx',
   phillyBarsRest: 'mapbox://danjford.cjdax71e63nqk2qrzm63oeall-4ulwn',
+  phillyTransitLines: 'mapbox://danjford.cjddntj1n01au2wm255vcypkb-2ggtb',
+  phillyTransitStations: 'mapbox://danjford.cjddns0pz042t2xqoa4h3l7u3-1isol',
 };
 
 const POPUP = new mapboxgl.Popup ({
@@ -163,7 +164,7 @@ MAP.on('load', function () {
         "paint": {
             "line-color": "#00353b",
             "line-opacity": 0.9,
-            "line-width": 5
+            "line-width": 7
         }
     });
 
@@ -177,7 +178,7 @@ MAP.on('load', function () {
         "source-layer": "parade-start",
         "type": "circle",
         "layout": {
-            "visibility": "visible"
+            "visibility": "visible",
         },
         'paint': {
             'circle-radius': {
@@ -209,6 +210,46 @@ MAP.on('load', function () {
         },
     });
 
+    MAP.addSource('philly-transit-lines', {
+        type: 'vector',
+        url: DATA_SOURCES.phillyTransitLines
+    });
+    MAP.addLayer({
+        "id": "philly-transit-lines",
+        "source": "philly-transit-lines",
+        "source-layer": "philly-transit-lines",
+        "type": "line",
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-color": "#00aaea",
+            "line-opacity": 0.9,
+            "line-width": 3
+        }
+    });
+
+    MAP.addSource('philly-transit-stations', {
+        type: 'vector',
+        url: DATA_SOURCES.phillyTransitStations
+    });
+    MAP.addLayer({
+        "id": "philly-transit-stations",
+        "source": "philly-transit-stations",
+        "source-layer": "philly-transit-stations",
+        "type": "circle",
+        "layout": {
+            "visibility": "visible"
+        },
+        'paint': {
+            'circle-radius': {
+                'base': 1.75,
+                'stops': [[12, 5], [22, 60]]
+            },
+            'circle-color': '#000'
+        }
+    });
+
     MAP.addSource('philly-bars-rest', {
         type: 'vector',
         url: DATA_SOURCES.phillyBarsRest
@@ -222,12 +263,10 @@ MAP.on('load', function () {
             "visibility": "visible"
         },
         'paint': {
-            // make circles larger as the user zooms from z12 to z22
             'circle-radius': {
                 'base': 1.75,
                 'stops': [[12, 5], [22, 60]]
             },
-            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
             'circle-color': [
                 'match',
                 ['get', 'amenity'],
@@ -250,7 +289,7 @@ MAP.on('load', function () {
     // enable POPUP
     MAP.on('click', function(e) {
       POPUP.remove();
-        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest'] });
+        let features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest', 'philly-transit-lines', 'philly-transit-stations'] });
         if (!features.length) {
           return;
         }
@@ -264,42 +303,42 @@ MAP.on('load', function () {
     });
 
     MAP.on('mousemove', function(e) {
-        var features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest'] });
+        var features = MAP.queryRenderedFeatures(e.point, { layers: ['philly-bars-rest', 'philly-transit-lines', 'philly-transit-stations'] });
         MAP.getCanvas().style.cursor = features.length ? 'pointer' : '';
     });
 
     // uncomment this section if toggle layer function needed
 
     // toggle layers
-    // let toggleLayerIds = [ 'philly-bars-rest' ];
-    //
-    // for (var i = 0; i < toggleLayerIds.length; i++) {
-    //     let id = toggleLayerIds[i];
-    //
-    //     let link = document.createElement('a');
-    //     link.href = '#';
-    //     link.className = 'active';
-    //     link.textContent = id;
-    //
-    //     link.onclick = function (e) {
-    //         var clickedLayer = this.textContent;
-    //         e.preventDefault();
-    //         e.stopPropagation();
-    //
-    //         let visibility = MAP.getLayoutProperty(clickedLayer, 'visibility');
-    //
-    //         if (visibility === 'visible') {
-    //             MAP.setLayoutProperty(clickedLayer, 'visibility', 'none');
-    //             this.className = '';
-    //         } else {
-    //             this.className = 'active';
-    //             MAP.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-    //         }
-    //     };
-    //
-    //     let layers = document.getElementById('layers');
-    //     layers.appendChild(link);
-    // }
+    let toggleLayerIds = [ 'philly-bars-rest', 'philly-transit-lines', 'philly-transit-stations' ];
+
+    for (var i = 0; i < toggleLayerIds.length; i++) {
+        let id = toggleLayerIds[i];
+
+        let link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+        link.textContent = id;
+
+        link.onclick = function (e) {
+            var clickedLayer = this.textContent;
+            e.preventDefault();
+            e.stopPropagation();
+
+            let visibility = MAP.getLayoutProperty(clickedLayer, 'visibility');
+
+            if (visibility === 'visible') {
+                MAP.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                MAP.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+        };
+
+        let layers = document.getElementById('layers');
+        layers.appendChild(link);
+    }
 
 });
 
