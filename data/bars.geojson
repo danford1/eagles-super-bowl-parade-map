@@ -1,40 +1,60 @@
 {
-  "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2018-02-06T00:40:02Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/655425272",
+        "addr:housenumber": "1901",
+        "internet_access": "no",
+        "opening_hours": "11:00 - 02:00",
+        "name": "Sit on It Bar",
+        "addr:street": "South 19th Street",
+        "phone": "+1 215 551 9389",
+        "addr:city": "Philadelphia",
+        "addr:postcode": "19145",
         "amenity": "bar",
-        "name": "Drinkers West"
+        "@id": "node/2699327332",
+        "food": "yes"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.2002039,
-          39.9552143
-        ]
+          -75.177025,
+          39.927749
+        ],
+        "type": "Point"
       },
-      "id": "node/655425272"
+      "id": "052758465fedac9009e0fec79010090b"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1167079387",
+        "@id": "node/5172104654",
         "amenity": "bar",
-        "name": "Lickety Split Lounge"
+        "name": "Art Bar"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.149246,
-          39.941703
-        ]
+          -75.170282,
+          39.953045
+        ],
+        "type": "Point"
       },
-      "id": "node/1167079387"
+      "id": "05bf15468b36b286bba5cbfd8e7bfd2e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3892460932",
+        "amenity": "bar",
+        "name": "U-Bahn"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.162593,
+          39.950609
+        ],
+        "type": "Point"
+      },
+      "id": "1950a67d864067d01e37fe1904e75d4f"
     },
     {
       "type": "Feature",
@@ -44,58 +64,103 @@
         "name": "Vikings High School Club"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1636296,
-          39.9268474
-        ]
+          -75.163629,
+          39.926847
+        ],
+        "type": "Point"
       },
-      "id": "node/1204761128"
+      "id": "1e31ee8fd878bd4f4852dfa20408aef0"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1424271155",
-        "addr:housenumber": "344",
-        "addr:postcode": "19147",
+        "addr:housenumber": "1509",
+        "wheelchair": "yes",
+        "name": "Bob and Barbara's",
         "addr:street": "South Street",
+        "addr:city": "Philadelphia",
+        "addr:postcode": "19146",
         "amenity": "bar",
-        "name": "Copabanana",
-        "opening_hours": "Mo-Su 11:30-02:00",
-        "phone": "+1 215 9236180",
-        "website": "http://copabanana.com/"
+        "website": "http://bobandbarbaras.com/",
+        "@id": "node/2701472360"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1490932,
-          39.9415203
-        ]
+          -75.167477,
+          39.94397
+        ],
+        "type": "Point"
       },
-      "id": "node/1424271155"
+      "id": "224b88bd8b0ea452ad1e2bdf6cbdbf4d"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1475230378",
+        "@id": "node/2822025477",
         "addr:city": "Philadelphia",
-        "addr:housenumber": "1001",
-        "addr:postcode": "19123",
-        "addr:street": "North 2nd Street",
+        "addr:postcode": "19107",
+        "addr:street": "South 13th Street",
         "amenity": "bar",
-        "name": "Gunner's Run",
-        "opening_hours": "Mo-Su 11:00-02:00",
-        "phone": "215-923-4600",
-        "website": "http://gunnersrun.com/"
+        "name": "Woody's Bar"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1400237,
-          39.9662701
-        ]
+          -75.162289,
+          39.948839
+        ],
+        "type": "Point"
       },
-      "id": "node/1475230378"
+      "id": "36477a4c5ae35fca941d504a9b19a6ae"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3496961798",
+        "amenity": "bar",
+        "name": "The Fountain Porter"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.16144,
+          39.929501
+        ],
+        "type": "Point"
+      },
+      "id": "45b8ca8e8b5c577bd654522fb0c24a66"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3094702133",
+        "amenity": "bar",
+        "name": "Tria Taproom"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.174018,
+          39.950665
+        ],
+        "type": "Point"
+      },
+      "id": "46d02351f7586c99307b0f4d7ce90ad1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1980171513",
+        "amenity": "bar",
+        "name": "SideCar Bar",
+        "website": "http://www.thesidecarbar.com/"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.179427,
+          39.94177
+        ],
+        "type": "Point"
+      },
+      "id": "5ee6313ba36594999b94aad2a6188aef"
     },
     {
       "type": "Feature",
@@ -105,36 +170,13 @@
         "name": "Royal Tavern"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1548054,
-          39.9368559
-        ]
+          -75.154805,
+          39.936855
+        ],
+        "type": "Point"
       },
-      "id": "node/1475234787"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1475234971",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "947",
-        "addr:postcode": "19147",
-        "addr:street": "East Passyunk Avenue",
-        "amenity": "bar",
-        "name": "The Dive Bar",
-        "opening_hours": "17:00-02:00",
-        "phone": "+1 215 465 5505",
-        "smoking": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1548557,
-          39.9368148
-        ]
-      },
-      "id": "node/1475234971"
+      "id": "63ff0a85b66c5e2261cb9563ccad072f"
     },
     {
       "type": "Feature",
@@ -146,191 +188,88 @@
         "wheelchair": "yes"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1592391,
-          39.9529963
-        ]
+          -75.159239,
+          39.952996
+        ],
+        "type": "Point"
       },
-      "id": "node/1518109393"
+      "id": "6c315301e3e326e8f218781510574f97"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1700198702",
+        "@id": "node/3527163512",
         "addr:city": "Philadelphia",
+        "addr:housenumber": "1318",
+        "addr:street": "Chestnut Street",
         "amenity": "bar",
-        "name": "Smokey Joe's"
+        "name": "Brü Craft & Wurst"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.2028345,
-          39.9537387
-        ]
+          -75.162521,
+          39.950594
+        ],
+        "type": "Point"
       },
-      "id": "node/1700198702"
+      "id": "719f71c71d47590672afc1edffcf25bb"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1712057956",
+        "addr:housenumber": "947",
+        "opening_hours": "17:00-02:00",
+        "name": "The Dive Bar",
+        "smoking": "yes",
+        "addr:street": "East Passyunk Avenue",
+        "phone": "+1 215 465 5505",
         "addr:city": "Philadelphia",
-        "addr:housenumber": "700",
-        "addr:postcode": "19123",
-        "addr:street": "North 2nd Street",
+        "addr:postcode": "19147",
         "amenity": "bar",
-        "name": "The 700",
-        "phone": "+1 215 413 3181",
-        "website": "http://www.the700.org/"
+        "@id": "node/1475234971"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1413583,
-          39.9620487
-        ]
+          -75.154855,
+          39.936814
+        ],
+        "type": "Point"
       },
-      "id": "node/1712057956"
+      "id": "77abf773f036348a79ab9b14e0975b37"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1712067122",
-        "addr:housenumber": "412",
-        "addr:postcode": "19123",
-        "addr:street": "West Girard Ave",
-        "amenity": "bar",
-        "name": "The Fire"
+        "@id": "node/4175104198",
+        "addr:housenumber": "1200",
+        "addr:street": "East Passyunk Avenue",
+        "amenity": "bar"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1435298,
-          39.9698591
-        ]
+          -75.165109,
+          39.928482
+        ],
+        "type": "Point"
       },
-      "id": "node/1712067122"
+      "id": "7a429d2f2932b64b482b12f70baa8033"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1749989684",
+        "@id": "node/5366495321",
         "amenity": "bar",
-        "name": "Watkins Drinkery"
+        "name": "Strangeloves Craft Beer, New Orleans grub"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1620353,
-          39.9279585
-        ]
+          -75.159232,
+          39.948082
+        ],
+        "type": "Point"
       },
-      "id": "node/1749989684"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1980171513",
-        "amenity": "bar",
-        "name": "SideCar Bar",
-        "website": "http://www.thesidecarbar.com/"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1794272,
-          39.9417701
-        ]
-      },
-      "id": "node/1980171513"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2114079133",
-        "amenity": "bar",
-        "name": "Abby's Desert Lounge"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2172652,
-          39.9484621
-        ]
-      },
-      "id": "node/2114079133"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2177564503",
-        "amenity": "bar",
-        "name": "The Bar(n)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.221363,
-          39.9483487
-        ]
-      },
-      "id": "node/2177564503"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2182345789",
-        "amenity": "bar",
-        "name": "Flynn's Bar"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2024993,
-          39.9570682
-        ]
-      },
-      "id": "node/2182345789"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2256040057",
-        "amenity": "bar",
-        "name": "Lucky Strike",
-        "sport": "bowlin"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1632811,
-          39.9506774
-        ]
-      },
-      "id": "node/2256040057"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2419063592",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "701",
-        "addr:postcode": "19143",
-        "addr:street": "South 50th Street",
-        "amenity": "bar",
-        "cuisine": "pizza",
-        "name": "Dock Street Brewing Company",
-        "website": "http://www.dockstreetbeer.com/"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2228257,
-          39.9477622
-        ]
-      },
-      "id": "node/2419063592"
+      "id": "825f1f5f0a49c7373895c8892e4f97ad"
     },
     {
       "type": "Feature",
@@ -345,326 +284,29 @@
         "name": "The Bard's"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1743526,
-          39.9506995
-        ]
+          -75.174352,
+          39.950699
+        ],
+        "type": "Point"
       },
-      "id": "node/2538795585"
+      "id": "85dd5f21866fcc9c857dfa49a6d88af8"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2613465619",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "149",
-        "addr:postcode": "19123",
-        "addr:street": "Brown Street",
+        "@id": "node/4668627526",
         "amenity": "bar",
-        "name": "The Druid's Keep",
-        "phone": "215-413-0455"
+        "name": "South Philly Bar and Grill"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1399534,
-          39.9628076
-        ]
+          -75.158902,
+          39.933416
+        ],
+        "type": "Point"
       },
-      "id": "node/2613465619"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2613831410",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "847",
-        "addr:postcode": "19123",
-        "addr:street": "North 3rd Street",
-        "amenity": "bar",
-        "name": "Ortlieb's Lounge",
-        "phone": "267-324-3348",
-        "website": "http://www.ortliebsphilly.com/"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1424886,
-          39.9645647
-        ]
-      },
-      "id": "node/2613831410"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2613831462",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "705",
-        "addr:postcode": "19123",
-        "addr:street": "North 2nd Street",
-        "amenity": "bar",
-        "name": "Bourbon & Branch",
-        "opening_hours": "Sa-Su 10:00-02:00; Mo-Fr 11:00-02:00",
-        "phone": "215-238-0660",
-        "website": "http://bourbonandbranchphilly.com/"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1409311,
-          39.9620572
-        ]
-      },
-      "id": "node/2613831462"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2613854617",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "537",
-        "addr:postcode": "19123",
-        "addr:street": "North 3rd Street",
-        "amenity": "bar",
-        "name": "Finnigan's Wake",
-        "phone": "215-574-9317",
-        "website": "http://www.finnigans.com/",
-        "wheelchair": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1432118,
-          39.9610231
-        ]
-      },
-      "id": "node/2613854617"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2699327332",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "1901",
-        "addr:postcode": "19145",
-        "addr:street": "South 19th Street",
-        "amenity": "bar",
-        "food": "yes",
-        "internet_access": "no",
-        "name": "Sit on It Bar",
-        "opening_hours": "11:00 - 02:00",
-        "phone": "+1 215 551 9389"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.177025,
-          39.9277491
-        ]
-      },
-      "id": "node/2699327332"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2699346739",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "909",
-        "addr:postcode": "19123",
-        "addr:street": "North 2nd Street",
-        "amenity": "bar",
-        "name": "North Bowl",
-        "phone": "(215) 238-2695",
-        "website": "www.northbowlphilly.com"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1403339,
-          39.9644678
-        ]
-      },
-      "id": "node/2699346739"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2701472360",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "1509",
-        "addr:postcode": "19146",
-        "addr:street": "South Street",
-        "amenity": "bar",
-        "name": "Bob and Barbara's",
-        "website": "http://bobandbarbaras.com/",
-        "wheelchair": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1674777,
-          39.9439702
-        ]
-      },
-      "id": "node/2701472360"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2822025477",
-        "addr:city": "Philadelphia",
-        "addr:postcode": "19107",
-        "addr:street": "South 13th Street",
-        "amenity": "bar",
-        "name": "Woody's Bar"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1622899,
-          39.9488398
-        ]
-      },
-      "id": "node/2822025477"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2822026031",
-        "amenity": "bar",
-        "name": "Devil's Den"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1619902,
-          39.9358102
-        ]
-      },
-      "id": "node/2822026031"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2876251699",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "831",
-        "addr:postcode": "19147",
-        "addr:street": "Christian Street",
-        "amenity": "bar",
-        "name": "12 Steps Down",
-        "opening_hours": "11:00-02:00",
-        "phone": "+1 215 238 0379",
-        "smoking": "yes",
-        "website": "http://www.12stepsdown.com"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1576839,
-          39.9390528
-        ]
-      },
-      "id": "node/2876251699"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2931994044",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "1216",
-        "addr:postcode": "19146",
-        "addr:street": "South 17th Street",
-        "amenity": "bar",
-        "name": "Señor Baynard's Bar & Grill",
-        "phone": "+1 215 462 1888",
-        "smoking": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1722146,
-          39.9359904
-        ]
-      },
-      "id": "node/2931994044"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3042654511",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "22",
-        "addr:postcode": "19106",
-        "addr:street": "South 3rd Street",
-        "amenity": "bar",
-        "name": "National Mechanics",
-        "phone": "+1 215 701 4883",
-        "smoking": "outside",
-        "website": "http://www.nationalmechanics.com/",
-        "wheelchair": "no",
-        "wheelchair:description": "Their website says ramp at side wheelchair accessible but it's difficult to get attention of any staff from outside and there is trash/rubble on a very steep ramp."
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1459458,
-          39.9495502
-        ]
-      },
-      "id": "node/3042654511"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3076806533",
-        "amenity": "bar",
-        "name": "The Monkey Bar",
-        "wheelchair": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.14613,
-          39.94875
-        ]
-      },
-      "id": "node/3076806533"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3094702133",
-        "amenity": "bar",
-        "name": "Tria Taproom"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1740181,
-          39.9506651
-        ]
-      },
-      "id": "node/3094702133"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3103172314",
-        "amenity": "bar",
-        "name": "The Irish Pol",
-        "wheelchair": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1458878,
-          39.9488705
-        ]
-      },
-      "id": "node/3103172314"
+      "id": "860a811d7b6e744f36f888582042cda5"
     },
     {
       "type": "Feature",
@@ -676,353 +318,78 @@
         "wheelchair:description": "Double door vestibule entrance is wheelchair accessible. Restrooms have prohibitively narrow doors."
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1526914,
-          39.9495575
-        ]
+          -75.152691,
+          39.949557
+        ],
+        "type": "Point"
       },
-      "id": "node/3106219788"
+      "id": "8b507a092c4c5a3f8e19f83965429ba2"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3470849327",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "201",
-        "addr:postcode": "19106",
-        "addr:street": "Chestnut Street",
+        "addr:housenumber": "264",
+        "opening_hours": "Mo-Su 11:30-02:00",
+        "name": "Monk's Cafe",
+        "addr:street": "South 16th Street",
+        "phone": "+1 215-545-7005",
+        "addr:postcode": "19102",
+        "name:en": "Monk's Cafe",
         "amenity": "bar",
-        "name": "Rotten Ralph's"
+        "website": "http://monkscafe.com",
+        "@id": "node/4949327723",
+        "name:es": "Monk's Cafe"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1441761,
-          39.9484891
-        ]
+          -75.168079,
+          39.947693
+        ],
+        "type": "Point"
       },
-      "id": "node/3470849327"
+      "id": "93e813513c466812cac6f14658f5694e"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3496961798",
+        "@id": "node/2256040057",
         "amenity": "bar",
-        "name": "The Fountain Porter"
+        "name": "Lucky Strike",
+        "sport": "bowlin"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1614403,
-          39.9295012
-        ]
+          -75.163281,
+          39.950677
+        ],
+        "type": "Point"
       },
-      "id": "node/3496961798"
+      "id": "9c96fdfcb537643c3dae52f077837b18"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3527163512",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "1318",
-        "addr:street": "Chestnut Street",
+        "addr:housenumber": "264",
+        "opening_hours": "Mo-Su 11:30-02:00",
+        "name": "Monk's Cafe",
+        "addr:street": "South 16th Street",
+        "phone": "+1215-545-7005",
+        "addr:postcode": "19102",
+        "name:en": "Monk's Cafe",
         "amenity": "bar",
-        "name": "Brü Craft & Wurst"
+        "website": "http://monkscafe.com",
+        "@id": "node/4949265921",
+        "name:es": "Monk's Cafe"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1625219,
-          39.9505942
-        ]
+          -75.168068,
+          39.947687
+        ],
+        "type": "Point"
       },
-      "id": "node/3527163512"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3572807729",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "138",
-        "addr:postcode": "19106",
-        "addr:street": "Market Street",
-        "amenity": "bar",
-        "name": "Continental Restaurant & Martini Bar",
-        "phone": "215 923 6069"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1436572,
-          39.9497479
-        ]
-      },
-      "id": "node/3572807729"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3631850491",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "1301",
-        "addr:postcode": "19125",
-        "addr:state": "PA",
-        "addr:street": "Frankford Avenue",
-        "amenity": "bar",
-        "name": "Fishtown Tavern",
-        "opening_hours": "12-2am",
-        "smoking": "outside"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1343091,
-          39.9705096
-        ]
-      },
-      "id": "node/3631850491"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3670738439",
-        "amenity": "bar",
-        "name": "Talk of the Town Lounge"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1191584,
-          39.9307524
-        ]
-      },
-      "id": "node/3670738439"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3679823660",
-        "amenity": "bar",
-        "name": "Schmensky's"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1069315,
-          39.9276114
-        ]
-      },
-      "id": "node/3679823660"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3680628145",
-        "amenity": "bar",
-        "name": "Krystal Lounge"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1132284,
-          39.9329014
-        ]
-      },
-      "id": "node/3680628145"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3680768409",
-        "amenity": "bar",
-        "name": "Luby Vann Jam Lounge"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1033292,
-          39.9319342
-        ]
-      },
-      "id": "node/3680768409"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3694134684",
-        "amenity": "bar",
-        "name": "Coamo Social Club"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1017453,
-          39.9444832
-        ]
-      },
-      "id": "node/3694134684"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3885206651",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "1231-1233",
-        "addr:postcode": "19147",
-        "addr:state": "PA",
-        "addr:street": "East Passyunk Avenue",
-        "amenity": "bar",
-        "contact:facebook": "garagephilly",
-        "name": "The Garage",
-        "opening_hours": "5:00 PM - 2:00 AM Monday - Friday, 12:00 PM - 2:00 AM Saturday, Sunday",
-        "phone": "(215) 278-2429",
-        "smoking": "outside",
-        "website": "http://garagephilly.com/"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1588344,
-          39.9334997
-        ]
-      },
-      "id": "node/3885206651"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3892460932",
-        "amenity": "bar",
-        "name": "U-Bahn"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1625931,
-          39.950609
-        ]
-      },
-      "id": "node/3892460932"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3944585958",
-        "amenity": "bar",
-        "cuisine": "american",
-        "name": "Chickie's and Pete's Crabhouse and Sports Bar"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1747709,
-          39.9115895
-        ]
-      },
-      "id": "node/3944585958"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3944590539",
-        "amenity": "bar",
-        "name": "Philadium Tavern"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1763937,
-          39.9125123
-        ]
-      },
-      "id": "node/3944590539"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4175104198",
-        "addr:housenumber": "1200",
-        "addr:street": "East Passyunk Avenue",
-        "amenity": "bar"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1651095,
-          39.9284829
-        ]
-      },
-      "id": "node/4175104198"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4175142992",
-        "addr:housenumber": "1524",
-        "addr:street": "Sansom Street",
-        "amenity": "bar",
-        "name": "Oscar's Dive Bar"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.166966,
-          39.9506905
-        ]
-      },
-      "id": "node/4175142992"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4175144191",
-        "addr:street": "Pine Street",
-        "amenity": "bar",
-        "name": "Dirty Franks"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1628601,
-          39.9454257
-        ]
-      },
-      "id": "node/4175144191"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4267167928",
-        "amenity": "bar",
-        "name": "Ray's Happy Birthday Bar",
-        "opening_hours": "2am close",
-        "smoking": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1584926,
-          39.9341118
-        ]
-      },
-      "id": "node/4267167928"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4379394799",
-        "amenity": "bar",
-        "name": "Emily's"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.171807,
-          39.9308512
-        ]
-      },
-      "id": "node/4379394799"
+      "id": "a5eb999b3039f1a4c8ddde53159c8e26"
     },
     {
       "type": "Feature",
@@ -1035,228 +402,220 @@
         "smoking": "outside"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1808422,
-          39.9743646
-        ]
+          -75.180842,
+          39.974364
+        ],
+        "type": "Point"
       },
-      "id": "node/4551221875"
+      "id": "a792639497a6f36abf1bc50813d71bb1"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4649150190",
-        "addr:city": "Camden",
-        "addr:housenumber": "1",
-        "addr:postcode": "08102",
-        "addr:state": "NJ",
-        "addr:street": "Market Street",
-        "amenity": "bar",
-        "name": "The Victor Pub",
-        "outdoor_seating": "patio",
-        "phone": "856-635-0600",
+        "addr:housenumber": "1231-1233",
+        "contact:facebook": "garagephilly",
+        "opening_hours": "5:00 PM - 2:00 AM Monday - Friday, 12:00 PM - 2:00 AM Saturday, Sunday",
+        "addr:state": "PA",
+        "name": "The Garage",
         "smoking": "outside",
-        "website": "http://www.victorspub.com/",
-        "wheelchair": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1278892,
-          39.9474669
-        ]
-      },
-      "id": "node/4649150190"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4668627526",
-        "amenity": "bar",
-        "name": "South Philly Bar and Grill"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1589026,
-          39.9334165
-        ]
-      },
-      "id": "node/4668627526"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4779952927",
+        "addr:street": "East Passyunk Avenue",
+        "phone": "(215) 278-2429",
         "addr:city": "Philadelphia",
-        "addr:housenumber": "112",
-        "addr:postcode": "19106",
-        "addr:state": "PA",
-        "addr:street": "Chestnut Street",
+        "addr:postcode": "19147",
         "amenity": "bar",
-        "description": "First floor of building",
-        "name": "South Beach",
-        "outdoor_seating": "no"
+        "website": "http://garagephilly.com/",
+        "@id": "node/3885206651"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1430949,
-          39.9481828
-        ]
+          -75.158834,
+          39.933499
+        ],
+        "type": "Point"
       },
-      "id": "node/4779952927"
+      "id": "a870fdbc99b8610d9721cd1867dc29df"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4779956683",
+        "@id": "node/1749989684",
+        "amenity": "bar",
+        "name": "Watkins Drinkery"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.162035,
+          39.927958
+        ],
+        "type": "Point"
+      },
+      "id": "b174b1a6fadca89c766939fd956e6120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2822026031",
+        "amenity": "bar",
+        "name": "Devil's Den"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.16199,
+          39.93581
+        ],
+        "type": "Point"
+      },
+      "id": "b8e83f895bc91b6cff80556a7ae3e38d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4379394799",
+        "amenity": "bar",
+        "name": "Emily's"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.171807,
+          39.930851
+        ],
+        "type": "Point"
+      },
+      "id": "bc20f4d12ca492891d60365c5fb84b21"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:housenumber": "831",
+        "opening_hours": "11:00-02:00",
+        "name": "12 Steps Down",
+        "smoking": "yes",
+        "addr:street": "Christian Street",
+        "phone": "+1 215 238 0379",
         "addr:city": "Philadelphia",
-        "addr:housenumber": "112",
-        "addr:postcode": "19106",
-        "addr:state": "PA",
-        "addr:street": "Chestnut Street",
+        "addr:postcode": "19147",
         "amenity": "bar",
-        "description": "On second floor of building.  Holds dance classes some nights, and functions as a nightclub on weekends.",
-        "name": "Brasil's Nightclub",
-        "outdoor_seating": "no",
-        "smoking": "no"
+        "website": "http://www.12stepsdown.com",
+        "@id": "node/2876251699"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1430737,
-          39.9481789
-        ]
+          -75.157683,
+          39.939052
+        ],
+        "type": "Point"
       },
-      "id": "node/4779956683"
+      "id": "bfaffcb139769ef565ef518bed42187b"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4949265921",
-        "addr:housenumber": "264",
-        "addr:postcode": "19102",
-        "addr:street": "South 16th Street",
+        "@id": "node/3944590539",
         "amenity": "bar",
-        "name": "Monk's Cafe",
-        "name:en": "Monk's Cafe",
-        "name:es": "Monk's Cafe",
-        "opening_hours": "Mo-Su 11:30-02:00",
-        "phone": "+1215-545-7005",
-        "website": "http://monkscafe.com"
+        "name": "Philadium Tavern"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1680685,
-          39.9476871
-        ]
+          -75.176393,
+          39.912512
+        ],
+        "type": "Point"
       },
-      "id": "node/4949265921"
+      "id": "c54262e3c497b32e0979ec3dfd4a6d25"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4949327723",
-        "addr:housenumber": "264",
-        "addr:postcode": "19102",
-        "addr:street": "South 16th Street",
+        "@id": "node/4175144191",
+        "addr:street": "Pine Street",
         "amenity": "bar",
-        "name": "Monk's Cafe",
-        "name:en": "Monk's Cafe",
-        "name:es": "Monk's Cafe",
-        "opening_hours": "Mo-Su 11:30-02:00",
-        "phone": "+1 215-545-7005",
-        "website": "http://monkscafe.com"
+        "name": "Dirty Franks"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1680792,
-          39.9476934
-        ]
+          -75.16286,
+          39.945425
+        ],
+        "type": "Point"
       },
-      "id": "node/4949327723"
+      "id": "d9d8106edb39561324bfe5be2972d272"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5071801195",
+        "addr:housenumber": "1216",
+        "name": "Señor Baynard's Bar & Grill",
+        "smoking": "yes",
+        "addr:street": "South 17th Street",
+        "phone": "+1 215 462 1888",
         "addr:city": "Philadelphia",
-        "addr:housenumber": "2331",
-        "addr:postcode": "19125",
-        "addr:state": "PA",
-        "addr:street": "East Cumberland Street",
+        "addr:postcode": "19146",
         "amenity": "bar",
-        "name": "Memphis Taproom",
-        "outdoor_seating": "yes"
+        "@id": "node/2931994044"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1236506,
-          39.9800234
-        ]
+          -75.172214,
+          39.93599
+        ],
+        "type": "Point"
       },
-      "id": "node/5071801195"
+      "id": "e05571396bddc5bfa225a971ef85034b"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5172104654",
+        "@id": "node/3944585958",
         "amenity": "bar",
-        "name": "Art Bar"
+        "cuisine": "american",
+        "name": "Chickie's and Pete's Crabhouse and Sports Bar"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1702822,
-          39.9530458
-        ]
+          -75.17477,
+          39.911589
+        ],
+        "type": "Point"
       },
-      "id": "node/5172104654"
+      "id": "e0ee8b8c8a4f87500a93de3f67d63f6d"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5258029217",
-        "addr:city": "Philadelphia",
-        "addr:housenumber": "1050",
-        "addr:postcode": "19123",
-        "addr:state": "PA",
-        "addr:street": "North Hancock Street",
-        "addr:unit": "#1",
+        "@id": "node/4267167928",
         "amenity": "bar",
-        "name": "Crabby Cafe & Sports Bar",
-        "opening_hours": "Su-Th 11:00-02:00; Fr-Sa 11:00-00:00",
-        "outdoor_seating": "yes"
+        "name": "Ray's Happy Birthday Bar",
+        "opening_hours": "2am close",
+        "smoking": "yes"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1393076,
-          39.9660968
-        ]
+          -75.158492,
+          39.934111
+        ],
+        "type": "Point"
       },
-      "id": "node/5258029217"
+      "id": "fb5fedc69afd8fb4236873a6fe6e79b7"
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5366495321",
+        "@id": "node/4175142992",
+        "addr:housenumber": "1524",
+        "addr:street": "Sansom Street",
         "amenity": "bar",
-        "name": "Strangeloves Craft Beer, New Orleans grub"
+        "name": "Oscar's Dive Bar"
       },
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          -75.1592322,
-          39.9480826
-        ]
+          -75.166966,
+          39.95069
+        ],
+        "type": "Point"
       },
-      "id": "node/5366495321"
+      "id": "ff91ff308d6edb830e3deffc3ba9e607"
     }
-  ]
+  ],
+  "type": "FeatureCollection"
 }
