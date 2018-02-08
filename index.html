@@ -228,9 +228,9 @@ geolocateControl.on('geolocate', ev => {
                  'circle-stroke-color' : '#fff',
                  'circle-stroke-width': 2,
                  'circle-radius': 12,
-                 'circle-color': '#9d01ff'
+                 'circle-color': '#fbff00'
                 }
-            });
+            }, 'philly-bars-rest');
           }
 
           const sortedLons = [data.coordinates[0], nearestEatery[1].geometry.coordinates[0]].sort((a, b) => {
