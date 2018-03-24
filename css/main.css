@@ -10,6 +10,10 @@ grey-green: #c3d4d6
 light-grey-green: #e3eaea
 */
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     height: 100%;
@@ -127,7 +131,7 @@ a:hover, a:focus {
         "title"
         "maparea"
         "footer";
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     color: #444;
 }
