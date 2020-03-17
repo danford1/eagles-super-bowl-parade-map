@@ -2,7 +2,7 @@
 
 Use this map to find a bar or restaurant nearest to your current location.
 
-Try out the app: [eaglessuperbowlparade.com](eaglessuperbowlparade.com)
+Try out the app: [https://danford1.github.io/eagles-super-bowl-parade-map/](https://danford1.github.io/eagles-super-bowl-parade-map/)
 
 ## Server
 
